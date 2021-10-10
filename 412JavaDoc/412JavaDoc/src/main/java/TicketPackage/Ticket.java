@@ -14,7 +14,7 @@ public class Ticket {
     private String ride;
     private int price;
     private int ID;
-    private int testVar;
+
     /**
     *constructor for the ticket class creates a ticket object
     *@param time string for the time the ticket is purchased
@@ -52,4 +52,5 @@ public class Ticket {
     public String getTicketTime(){
         return this.time;
     }
+    
 }

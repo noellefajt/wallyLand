@@ -31,7 +31,7 @@ public class TicketController {
         }else if(selection == 3){
             md.addTicket(new Ticket("12:45","ride 3",30,3));
         }else{
-            System.out.println("not a ticket");
+            System.out.println("Error: input provided is not a ticket");
         }
     }
 }

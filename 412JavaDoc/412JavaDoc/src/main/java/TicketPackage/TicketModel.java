@@ -11,14 +11,14 @@ import java.util.Arrays;
  * @author Dylan
  */
 public class TicketModel {
-    private ArrayList<Ticket> tickets;
+    private ArrayList<Integer> tickets;
     private ArrayList<String> rides;
     /**
     *Constructor for ticket model creates ticket model object initiallized with 2 array lists, one empty array that takes ticket objects
     *and one that holds a list of the rides available for ticket purchase
     */
     public TicketModel(){
-        this.tickets = new ArrayList<Ticket>();
+        this.tickets = new ArrayList<Integer>();
         this.rides = new ArrayList<>(Arrays.asList("ride 1","ride 2","ride 3"));
 
     }
@@ -27,12 +27,18 @@ public class TicketModel {
     * @param ticket Ticket object to be stored in tickets array list 
     */
     public void addTicket(Ticket ticket){
-        tickets.add(ticket);
+        tickets.add(ticket.getTicketID());
     }
     /**
     returns the rides array list
     */
     public ArrayList<String> getRides(){
         return this.rides;
+    }
+    /**
+     returns a the ticket array
+     */
+    public ArrayList<Integer> getTickets(){
+        return this.tickets;
     }
 }
