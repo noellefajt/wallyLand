@@ -6,7 +6,7 @@
 package PlannerPackage;
 
 /**
- *
+ * The controller is responsible for communicating with the different classes in the app to create a cohesive user experience.
  * @author mattu
  */
 public class PlannerController {
@@ -28,8 +28,8 @@ public class PlannerController {
      * Set time method
      * @param time 
      */
-     public void setTime(String time){
-         model.setTime(time);
+    public void setTime(String time){
+        model.setTime(time);
      }
      
      /**
@@ -45,7 +45,7 @@ public class PlannerController {
       * @param description 
       */
      public void setDescription(String description){
-         model.setDescription(description);
+        model.setDescription(description);  
      }
      
      /**
@@ -60,7 +60,7 @@ public class PlannerController {
       * Method to print the events to the user based on data that can be updated.
       */
      public void displayEvents(){
-         view.printDailyEvents(model.getTime(), model.getDescription());
+         System.out.println("You have " + model.getDescription() + " on your schedule today at " + model.getTime() + ".");
      }
      
     

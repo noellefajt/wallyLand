@@ -17,15 +17,7 @@ public class restaurantRes {
     private int numPeople;
     private String resTime;
 
-    /**
-     * this is a constructor for restaurant res
-     * @param fName
-     * @param lName
-     * @param phone
-     * @param resName
-     * @param numPeople
-     * @param resTime 
-     */
+   
     public restaurantRes(String fName, String lName, String phone, String resName, int numPeople, String resTime) {
         this.fName = fName;
         this.lName = lName;
@@ -136,7 +128,8 @@ public class restaurantRes {
      * @return resStuff = all the reservation information converted to a string
      */
     public String toString(){
-        String resStuff = "";
+        String resStuff =  "First Name: " + getfName() + " Last Name: " + getlName() + " Phone Number: " + getPhone() 
+                + " Restaurant: " + getResName() + " Time: " + getResTime() + " Number of People: " + getNumPeople();
         return resStuff;
     }
     /**
@@ -144,7 +137,8 @@ public class restaurantRes {
      * @return info = all the reservation information
      */
     public String getInfo(){
-        String info = "";
+        String info = "First Name: " + getfName() + " Last Name: " + getlName() + " Phone Number: " + getPhone() 
+                + " Restaurant: " + getResName() + " Time: " + getResTime() + " Number of People: " + getNumPeople();
         return info;
     }
     
