@@ -4,34 +4,40 @@
  * and open the template in the editor.
  */
 package TicketPackage;
-
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.awt.event.*;
 /**
  *
  * @author Dylan
  */
 public class TicketController {
     private TicketModel md;
+    private TicketView vw;
     /**
     *Constructor for ticket controller, takes in a ticket model object
     *@param model TicketModel object
     */
-    public TicketController(TicketModel model){
+    public TicketController(TicketModel model, TicketView view){
         this.md = model;
+        this.vw = view;
+        makeTickets();
+        vw.initialsetup(5, md.getTickets().size());
+        vw.displayButtons(md.getTickets(), md.getHeaders());
     }
     /**
     *depending on the input from ticketPrompt method in ticket view
     *creates a ticket and passes it to the addTicketMethdo in model to be added to the ticket array
     *@param selection the specific selection integer returned from ticketView.ticketPrompt
     */
-    public void ticketSelection(int selection){
-        if(selection == 1){
-            md.addTicket(new Ticket("12:00","ride 1",30,1));
-        }else if(selection == 2){
-            md.addTicket(new Ticket("12:30","ride 2",30,2));
-        }else if(selection == 3){
-            md.addTicket(new Ticket("12:45","ride 3",30,3));
-        }else{
-            System.out.println("Error: input provided is not a ticket");
-        }
+    public void makeTickets(){
+        concreteFactory factory = new concreteFactory(md);
+        factory.makeTicket("single", 15, "ride 1", LocalDate.now(), "12345");
+        factory.makeTicket("three", 45, "ride 1", LocalDate.now(), "12345");
+        factory.makeTicket("five", 75, "ride 1", LocalDate.now(), "12345");
     }
+    public ArrayList<Ticket> getTickets(){
+        return md.getTickets();
+    }
+  
 }
