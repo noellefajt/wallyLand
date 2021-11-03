@@ -12,14 +12,14 @@ import java.util.Arrays;
  */
 public class TicketModel {
     private ArrayList<Ticket> tickets;
-    private ArrayList<String> rides;
+    private ArrayList<String> headers;
     /**
     *Constructor for ticket model creates ticket model object initiallized with 2 array lists, one empty array that takes ticket objects
     *and one that holds a list of the rides available for ticket purchase
     */
     public TicketModel(){
         this.tickets = new ArrayList<Ticket>();
-        this.rides = new ArrayList<>(Arrays.asList("ride 1","ride 2","ride 3"));
+        this.headers = new ArrayList<>(Arrays.asList("ticket type","price","ride","time","ID"));
 
     }
     /**
@@ -32,7 +32,13 @@ public class TicketModel {
     /**
     returns the rides array list
     */
-    public ArrayList<String> getRides(){
-        return this.rides;
+    public ArrayList<String> getHeaders(){
+        return this.headers;
+    }
+    /**
+     returns a the ticket array
+     */
+    public ArrayList<Ticket> getTickets(){
+        return this.tickets;
     }
 }
